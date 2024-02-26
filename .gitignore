@@ -1,0 +1,9 @@
+# Ignorar archivos terminados en .uvuguix
+*.uvuguix
+
+# Ignorar archivos que siguen el patrón .uvguix.*username*
+*.uvguix.*
+
+# Ignorar directorios llamados Listings y Objects
+/Listings/
+/Objects/
