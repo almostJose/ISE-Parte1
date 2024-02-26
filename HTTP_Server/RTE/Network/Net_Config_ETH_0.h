@@ -40,7 +40,7 @@
 //     <s.15>IP Address
 //     <i>Static IPv4 Address in text representation
 //     <i>Default: "192.168.0.100"
-#define ETH0_IP4_ADDR           "192.168.0.100"
+#define ETH0_IP4_ADDR           "192.168.100.166"
 
 //     <s.15>Subnet mask
 //     <i>Local Subnet mask in text representation
@@ -50,7 +50,7 @@
 //     <s.15>Default Gateway
 //     <i>IP Address of Default Gateway in text representation
 //     <i>Default: "192.168.0.254"
-#define ETH0_IP4_GATEWAY        "192.168.0.254"
+#define ETH0_IP4_GATEWAY        "192.168.100.1"
 
 //     <s.15>Primary DNS Server
 //     <i>IP Address of Primary DNS Server in text representation
@@ -124,7 +124,7 @@
 //     <i>When this option is enabled, local IP address, Net Mask
 //     <i>and Default Gateway are obtained automatically from
 //     <i>the DHCP Server on local LAN.
-#define ETH0_DHCP_ENABLE        1
+#define ETH0_DHCP_ENABLE        0
 
 //       <s.40>Vendor Class Identifier
 //       <i>This value is optional. If specified, it is added
@@ -151,7 +151,7 @@
 
 //   <e>IPv6
 //   <i>Enable IPv6 Protocol for Network Interface
-#define ETH0_IP6_ENABLE         1
+#define ETH0_IP6_ENABLE         0
 
 //     <s.40>IPv6 Address
 //     <i>Static IPv6 Address in text representation

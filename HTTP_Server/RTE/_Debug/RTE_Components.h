@@ -39,8 +39,15 @@
 #define RTE_Network_Socket_UDP          /* Network Socket UDP */
 /* Keil::CMSIS Driver:Ethernet MAC:2.9 */
 #define RTE_Drivers_ETH_MAC0            /* Driver ETH_MAC0 */
-/* Keil::CMSIS Driver:Ethernet PHY:KSZ8081RNA:6.3.0 */
-#define RTE_Drivers_PHY_KSZ8081RNA      /* Driver PHY KSZ8081RNA/RND */
+/* Keil::CMSIS Driver:Ethernet PHY:LAN8742A:1.3.0 */
+#define RTE_Drivers_PHY_LAN8742A        /* Driver PHY LAN8742A */
+/* Keil::CMSIS Driver:SPI:2.15 */
+#define RTE_Drivers_SPI1                /* Driver SPI1 */
+        #define RTE_Drivers_SPI2                /* Driver SPI2 */
+        #define RTE_Drivers_SPI3                /* Driver SPI3 */
+        #define RTE_Drivers_SPI4                /* Driver SPI4 */
+        #define RTE_Drivers_SPI5                /* Driver SPI5 */
+        #define RTE_Drivers_SPI6                /* Driver SPI6 */
 /* Keil::Device:STM32Cube Framework:Classic:1.7.9 */
 #define RTE_DEVICE_FRAMEWORK_CLASSIC
 /* Keil::Device:STM32Cube HAL:ADC:1.7.9 */
@@ -57,8 +64,12 @@
 #define RTE_DEVICE_HAL_PWR
 /* Keil::Device:STM32Cube HAL:RCC:1.7.9 */
 #define RTE_DEVICE_HAL_RCC
+/* Keil::Device:STM32Cube HAL:SPI:1.7.9 */
+#define RTE_DEVICE_HAL_SPI
 /* Keil::Device:STM32Cube HAL:SRAM:1.7.9 */
 #define RTE_DEVICE_HAL_SRAM
+/* Keil::Device:STM32Cube HAL:TIM:1.7.9 */
+#define RTE_DEVICE_HAL_TIM
 /* Keil::Device:Startup:2.6.3 */
 #define RTE_DEVICE_STARTUP_STM32F4XX    /* Device Startup for STM32F4 */
 

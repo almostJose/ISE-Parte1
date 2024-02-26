@@ -13,6 +13,7 @@
 #include "rl_net.h"                     // Keil.MDK-Pro::Network:CORE
 
 #include "Board_LED.h"                  // ::Board Support:LED
+#include "lcd.h"
 
 #if      defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
 #pragma  clang diagnostic push
@@ -26,6 +27,12 @@ extern uint8_t  get_button (void);
 extern bool LEDrun;
 extern char lcd_text[2][20+1];
 extern osThreadId_t TID_Display;
+
+extern osMessageQueueId_t mid_MsgQueue;
+typedef struct {                                // object data type
+  uint8_t linea;
+  unsigned char inf[256];
+} MSGQUEUE_OBJ_t;
 
 // Local variables.
 static uint8_t P2;
@@ -103,6 +110,8 @@ void netCGI_ProcessQuery (const char *qstr) {
 void netCGI_ProcessData (uint8_t code, const char *data, uint32_t len) {
   char var[40],passw[12];
 
+	MSGQUEUE_OBJ_t msg;
+	
   if (code != 0) {
     // Ignore all other codes
     return;
@@ -123,12 +132,15 @@ void netCGI_ProcessData (uint8_t code, const char *data, uint32_t len) {
       // First character is non-null, string exists
       if (strcmp (var, "led0=on") == 0) {
         P2 |= 0x01;
+				//LED_On(0);
       }
       else if (strcmp (var, "led1=on") == 0) {
         P2 |= 0x02;
+				//LED_On(1);
       }
       else if (strcmp (var, "led2=on") == 0) {
         P2 |= 0x04;
+				//LED_On(2);
       }
       else if (strcmp (var, "led3=on") == 0) {
         P2 |= 0x08;
@@ -163,13 +175,21 @@ void netCGI_ProcessData (uint8_t code, const char *data, uint32_t len) {
       }
       else if (strncmp (var, "lcd1=", 5) == 0) {
         // LCD Module line 1 text
-        strcpy (lcd_text[0], var+5);
-        osThreadFlagsSet (TID_Display, 0x01);
+//        strcpy (lcd_text[0], var+5);
+//        osThreadFlagsSet (TID_Display, 0x01);
+				
+				sprintf(msg.inf, lcd_text[0]);
+        msg.linea = 1;
+        osMessageQueuePut(mid_MsgQueue, &msg, 0U, 0U);
       }
       else if (strncmp (var, "lcd2=", 5) == 0) {
         // LCD Module line 2 text
-        strcpy (lcd_text[1], var+5);
-        osThreadFlagsSet (TID_Display, 0x01);
+//        strcpy (lcd_text[1], var+5);
+//        osThreadFlagsSet (TID_Display, 0x01);
+				
+				sprintf(msg.inf, lcd_text[1]);
+        msg.linea = 2;
+        osMessageQueuePut(mid_MsgQueue, &msg, 0U, 0U);
       }
     }
   } while (data);

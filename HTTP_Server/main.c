@@ -39,6 +39,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "lcd.h"
 
 #ifdef RTE_CMSIS_RTOS2_RTX5
 /**
@@ -112,6 +113,8 @@ int main(void)
 
   /* Create application main thread */
   osThreadNew(app_main, NULL, &app_main_attr);
+	
+	Init_LCD();
 
   /* Start thread execution */
   osKernelStart();
