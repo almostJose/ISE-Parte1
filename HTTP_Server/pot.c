@@ -278,5 +278,5 @@ int32_t tomar_medida(void)
 {
 	ADC_Channel_Config(10,1);
 
-	return ((int32_t)round( conversionTemperatura( ADC_getVoltage() ) * 2.0 ) / 2.0);
+	return (int32_t)ADC_getVoltage();
 }

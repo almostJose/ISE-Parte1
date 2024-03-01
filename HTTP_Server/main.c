@@ -40,6 +40,13 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "lcd.h"
+#include "time.h"
+#include "stm32f4xx_hal.h"
+#include <stdio.h>
+#include "Board_LED.h"                  // ::Board Support:LED
+
+#define RTC_ASYNCH_PREDIV  0x007F   /* LSE as RTC clock */
+#define RTC_SYNCH_PREDIV   0x00FF /* LSE as RTC clock */
 
 #ifdef RTE_CMSIS_RTOS2_RTX5
 /**
@@ -76,9 +83,22 @@ uint32_t HAL_GetTick (void) {
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+RTC_HandleTypeDef RtcHandle;
+extern osMessageQueueId_t mid_MsgQueue;
+typedef struct {                                // object data type
+  uint8_t linea;
+  unsigned char inf[256];
+} MSGQUEUE_OBJ_t;
+
+///* Buffers used for displaying Time and Date */
+//uint8_t aShowTime[50] = {0};
+//uint8_t aShowDate[50] = {0};
+
 /* Private function prototypes -----------------------------------------------*/
 static void SystemClock_Config(void);
 static void Error_Handler(void);
+static void RTC_CalendarConfig(void);
+void RTC_CalendarShow(uint8_t *showtime, uint8_t *showdate);
 
 /* Private functions ---------------------------------------------------------*/
 /**
@@ -106,6 +126,56 @@ int main(void)
 
   /* Add your application code here
      */
+  LED_Initialize();
+  /*##-1- Configure the RTC peripheral #######################################*/
+  /* Configure RTC prescaler and RTC data registers */
+  /* RTC configured as follows:
+      - Hour Format    = Format 24
+      - Asynch Prediv  = Value according to source clock
+      - Synch Prediv   = Value according to source clock
+      - OutPut         = Output Disable
+      - OutPutPolarity = High Polarity
+      - OutPutType     = Open Drain */ 
+  RtcHandle.Instance = RTC; 
+  RtcHandle.Init.HourFormat = RTC_HOURFORMAT_24;
+  RtcHandle.Init.AsynchPrediv = RTC_ASYNCH_PREDIV;
+  RtcHandle.Init.SynchPrediv = RTC_SYNCH_PREDIV;
+  RtcHandle.Init.OutPut = RTC_OUTPUT_DISABLE;
+  RtcHandle.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
+  RtcHandle.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
+  __HAL_RTC_RESET_HANDLE_STATE(&RtcHandle);
+  if (HAL_RTC_Init(&RtcHandle) != HAL_OK)
+  {
+    /* Initialization Error */
+    Error_Handler();
+  }
+  
+  /*##-2- Check if Data stored in BackUp register1: No Need to reconfigure RTC#*/
+  /* Read the Back Up Register 1 Data */
+  if (HAL_RTCEx_BKUPRead(&RtcHandle, RTC_BKP_DR1) != 0x32F2)
+  {
+    /* Configure RTC Calendar */
+    RTC_CalendarConfig();
+  }
+  else
+  {
+    /* Check if the Power On Reset flag is set */
+    if (__HAL_RCC_GET_FLAG(RCC_FLAG_PORRST) != RESET)
+    {
+      /* Turn on LED2: Power on reset occurred */
+      //BSP_LED_On(LED2);
+      LED_On(1);
+    }
+    /* Check if Pin Reset flag is set */
+    if (__HAL_RCC_GET_FLAG(RCC_FLAG_PINRST) != RESET)
+    {
+      /* Turn on LED1: External reset occurred */
+      //BSP_LED_On(LED1);
+      LED_On(0);
+    }
+    /* Clear source Reset Flag */
+    __HAL_RCC_CLEAR_RESET_FLAGS();
+  }
 
 #ifdef RTE_CMSIS_RTOS2
   /* Initialize CMSIS-RTOS2 */
@@ -115,6 +185,7 @@ int main(void)
   osThreadNew(app_main, NULL, &app_main_attr);
 	
 	Init_LCD();
+  Init_Thread();
 
   /* Start thread execution */
   osKernelStart();
@@ -164,8 +235,8 @@ static void SystemClock_Config(void)
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = 25U;
-  RCC_OscInitStruct.PLL.PLLN = 336U;
+  RCC_OscInitStruct.PLL.PLLM = 4U;
+  RCC_OscInitStruct.PLL.PLLN = 168U;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 7U;
   if(HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -203,9 +274,83 @@ static void SystemClock_Config(void)
 static void Error_Handler(void)
 {
   /* User may add here some code to deal with this error */
+  LED_On(2);
   while(1)
   {
   }
+}
+
+/**
+  * @brief  Configure the current time and date.
+  * @param  None
+  * @retval None
+  */
+static void RTC_CalendarConfig(void)
+{
+  RTC_DateTypeDef sdatestructure;
+  RTC_TimeTypeDef stimestructure;
+
+  /*##-1- Configure the Date #################################################*/
+  /* Set Date: Tuesday February 18th 2014 */
+  sdatestructure.Year = 0x14;
+  sdatestructure.Month = RTC_MONTH_FEBRUARY;
+  sdatestructure.Date = 0x18;
+  sdatestructure.WeekDay = RTC_WEEKDAY_TUESDAY;
+  
+  if(HAL_RTC_SetDate(&RtcHandle,&sdatestructure,RTC_FORMAT_BCD) != HAL_OK)
+  {
+    /* Initialization Error */
+    Error_Handler();
+  }
+
+  /*##-2- Configure the Time #################################################*/
+  /* Set Time: 02:00:00 */
+  stimestructure.Hours = 0x02;
+  stimestructure.Minutes = 0x00;
+  stimestructure.Seconds = 0x00;
+  stimestructure.TimeFormat = RTC_HOURFORMAT12_AM;
+  stimestructure.DayLightSaving = RTC_DAYLIGHTSAVING_NONE ;
+  stimestructure.StoreOperation = RTC_STOREOPERATION_RESET;
+
+  if (HAL_RTC_SetTime(&RtcHandle, &stimestructure, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    /* Initialization Error */
+    Error_Handler();
+  }
+
+  /*##-3- Writes a data in a RTC Backup data Register1 #######################*/
+  HAL_RTCEx_BKUPWrite(&RtcHandle, RTC_BKP_DR1, 0x32F2);
+}
+
+/**
+  * @brief  Display the current time and date.
+  * @param  showtime : pointer to buffer
+  * @param  showdate : pointer to buffer
+  * @retval None
+  */
+void RTC_CalendarShow(uint8_t *showtime, uint8_t *showdate)
+{
+  MSGQUEUE_OBJ_t msg;
+  
+  RTC_DateTypeDef sdatestructureget;
+  RTC_TimeTypeDef stimestructureget;
+
+  /* Get the RTC current Time */
+  HAL_RTC_GetTime(&RtcHandle, &stimestructureget, RTC_FORMAT_BIN);
+  /* Get the RTC current Date */
+  HAL_RTC_GetDate(&RtcHandle, &sdatestructureget, RTC_FORMAT_BIN);
+  /* Display time Format : hh:mm:ss */
+  sprintf((char *)showtime, "%2d:%2d:%2d", stimestructureget.Hours, stimestructureget.Minutes, stimestructureget.Seconds);
+  /* Display date Format : mm-dd-yy */
+  sprintf((char *)showdate, "%2d-%2d-%2d", sdatestructureget.Month, sdatestructureget.Date, 2000 + sdatestructureget.Year);
+  
+  sprintf(msg.inf, showtime);
+  msg.linea = 1;
+  osMessageQueuePut(mid_MsgQueue, &msg, 0U, 0U);
+  
+  sprintf(msg.inf, showdate);
+  msg.linea = 2;
+  osMessageQueuePut(mid_MsgQueue, &msg, 0U, 0U);
 }
 
 #ifdef  USE_FULL_ASSERT
