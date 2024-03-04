@@ -10,7 +10,7 @@
       <TargetName>Debug</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::ARMCC</pCCUsed>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -313,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>2</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>0</OneElfS>
@@ -434,19 +434,19 @@
               <FilePath>.\main.h</FilePath>
             </File>
             <File>
-              <FileName>time.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\time.c</FilePath>
-            </File>
-            <File>
-              <FileName>time.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\time.h</FilePath>
-            </File>
-            <File>
               <FileName>stm32f4xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\stm32f4xx_it.c</FilePath>
+            </File>
+            <File>
+              <FileName>RTC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\RTC.c</FilePath>
+            </File>
+            <File>
+              <FileName>RTC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\RTC.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -547,6 +547,16 @@
               <FileName>pabb.gif</FileName>
               <FileType>9</FileType>
               <FilePath>.\Web\pabb.gif</FilePath>
+            </File>
+            <File>
+              <FileName>rtc.cgi</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\rtc.cgi</FilePath>
+            </File>
+            <File>
+              <FileName>rtc.cgx</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\rtc.cgx</FilePath>
             </File>
           </Files>
         </Group>
@@ -1008,19 +1018,19 @@
               <FilePath>.\main.h</FilePath>
             </File>
             <File>
-              <FileName>time.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\time.c</FilePath>
-            </File>
-            <File>
-              <FileName>time.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\time.h</FilePath>
-            </File>
-            <File>
               <FileName>stm32f4xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\stm32f4xx_it.c</FilePath>
+            </File>
+            <File>
+              <FileName>RTC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\RTC.c</FilePath>
+            </File>
+            <File>
+              <FileName>RTC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\RTC.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1121,6 +1131,16 @@
               <FileName>pabb.gif</FileName>
               <FileType>9</FileType>
               <FilePath>.\Web\pabb.gif</FilePath>
+            </File>
+            <File>
+              <FileName>rtc.cgi</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\rtc.cgi</FilePath>
+            </File>
+            <File>
+              <FileName>rtc.cgx</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\rtc.cgx</FilePath>
             </File>
           </Files>
         </Group>

@@ -54,7 +54,7 @@ extern const osThreadAttr_t app_main_attr;
 
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
-void RTC_CalendarShow(uint8_t *showtime, uint8_t *showdate);
+void Error_Handler(void);
 extern void app_main (void *arg);
 
 #endif /* __MAIN_H */

@@ -14,6 +14,8 @@
 
 #include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
 #include "Board_LED.h"                  // ::Board Support:LED
+#include "lcd.h"
+#include "RTC.h"
 #include "pot.h"
 #include "Board_Buttons.h"              // ::Board Support:Buttons
 //#include "Board_ADC.h"                  // ::Board Support:A/D Converter
@@ -27,6 +29,9 @@ const osThreadAttr_t app_main_attr = {
   .stack_mem  = &app_main_stk[0],
   .stack_size = sizeof(app_main_stk)
 };
+
+uint8_t aShowTime[50] = {0};
+uint8_t aShowDate[50] = {0};
 
 //extern GLCD_FONT GLCD_Font_6x8;
 //extern GLCD_FONT GLCD_Font_16x24;
@@ -174,12 +179,29 @@ __NO_RETURN void app_main (void *arg) {
 //  LED_Initialize();
 //  Buttons_Initialize();
 //  ADC_Initialize();
+	MSGQUEUE_OBJ_t msg;
 
 	LED_Initialize();
+	RTC_Config();
   netInitialize ();
 
 //  TID_Led     = osThreadNew (BlinkLed, NULL, NULL);
 //  TID_Display = osThreadNew (Display,  NULL, NULL);
 
+	while (1) {
+		/*##-3- Display the updated Time and Date ################################*/
+    RTC_CalendarShow(aShowTime, aShowDate);
+		
+		sprintf(msg.inf, aShowTime);
+    msg.linea = 1;
+    osMessageQueuePut(mid_MsgQueue, &msg, 0U, 0U);
+		
+		sprintf(msg.inf, aShowDate);
+    msg.linea = 2;
+    osMessageQueuePut(mid_MsgQueue, &msg, 0U, 0U);
+		
+    osThreadYield();                            // suspend thread
+  }
+	
   osThreadExit();
 }

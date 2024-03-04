@@ -1,0 +1,216 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.34.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: José Perandrés UPM Flex license: error obtaining information 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.34.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.34.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
+Dialog DLL:      TCM.DLL V1.48.0.0
+ 
+<h2>Project:</h2>
+C:\UNIVERSIDAD\ISE\ISE-Parte1\P2_comienzo\p2.uvprojx
+Project File Date:  03/02/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+RTC.c(63): warning: passing 'unsigned char [256]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                sprintf(msg.inf, aShowTime);
+                        ^~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+                                                  ^
+RTC.c(63): warning: passing 'uint8_t [50]' to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                sprintf(msg.inf, aShowTime);
+                                 ^~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+                                                                                      ^
+RTC.c(63): warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf(msg.inf, aShowTime);
+                                 ^~~~~~~~~
+RTC.c(63): note: treat the string as an argument to avoid this
+                sprintf(msg.inf, aShowTime);
+                                 ^
+                                 "%s", 
+RTC.c(67): warning: passing 'unsigned char [256]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                sprintf(msg.inf, aShowDate);
+                        ^~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+                                                  ^
+RTC.c(67): warning: passing 'uint8_t [50]' to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                sprintf(msg.inf, aShowDate);
+                                 ^~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+                                                                                      ^
+RTC.c(67): warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf(msg.inf, aShowDate);
+                                 ^~~~~~~~~
+RTC.c(67): note: treat the string as an argument to avoid this
+                sprintf(msg.inf, aShowDate);
+                                 ^
+                                 "%s", 
+6 warnings generated.
+compiling RTC.c...
+linking...
+Program Size: Code=18252 RO-data=3232 RW-data=176 ZI-data=46592  
+".\Objects\p2.axf" - 0 Error(s), 6 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: SPI Version: 2.3.0
+   * Component: RTOS2 Version: 2.1.3
+   * Component: CORE Version: 5.5.0
+   * Component: Keil RTX5 Variant: Library Version: 5.5.3
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.MDK-Middleware.7.13.0.pack
+                Keil.MDK-Middleware.7.13.0
+                Middleware for Keil MDK-Professional and MDK-Plus
+   * Component: LED Version: 1.0.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.15.0.pack
+                Keil.STM32F4xx_DFP.2.15.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: STM32Cube Framework Version: 1.0.0
+   * Component: SPI Version: 2.15
+   * Component: Classic Version: 1.7.9
+   * Component: Common Version: 1.7.9
+   * Component: Cortex Version: 1.7.9
+   * Component: DMA Version: 1.7.9
+   * Component: GPIO Version: 1.7.9
+   * Component: PWR Version: 1.7.9
+   * Component: RCC Version: 1.7.9
+   * Component: RTC Version: 1.7.9
+   * Component: SPI Version: 1.7.9
+   * Component: TIM Version: 1.7.9
+   * Component: Startup Version: 2.6.3
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32NUCLEO_BSP.1.8.0.pack
+                Keil.STM32NUCLEO_BSP.1.8.0
+                STMicroelectronics Nucleo Boards Support and Examples
+   * Component: LED Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\CMSIS
+  .\RTE\Device\STM32F429ZITx
+  .\RTE\_Target_1
+  C:\Users\jpera\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\jpera\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Driver\Include
+  C:\Users\jpera\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include
+  C:\Users\jpera\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\RTX\Include
+  C:\Users\jpera\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.13.0\Board
+  C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::Board Support:LED:1.0.0 (API)
+      Include file:  Board\Board_LED.h
+
+   * Component: ::CMSIS Driver:SPI:2.3.0 (API)
+      Include file:  CMSIS\Driver\Include\Driver_SPI.h
+
+   * Component: ::CMSIS:RTOS2:2.1.3 (API)
+      Include file:  CMSIS\RTOS2\Include\cmsis_os2.h
+
+   * Component: ::Device:STM32Cube Framework:1.0.0 (API)
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: ARM::CMSIS:RTOS2:Keil RTX5:Library:5.5.3
+      Include file:  CMSIS\RTOS2\RTX\Include\rtx_os.h
+      Source file:   CMSIS\RTOS2\RTX\Template\Events.c
+      Source file:   CMSIS\RTOS2\RTX\Config\RTX_Config.c
+      Source file:   CMSIS\RTOS2\RTX\Template\svc_user.c
+      Source file:   CMSIS\RTOS2\RTX\Template\MemPool.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Thread.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Mutex.c
+      Source file:   CMSIS\RTOS2\RTX\Template\MsgQueue.c
+      Source file:   CMSIS\RTOS2\RTX\Source\rtx_lib.c
+      Source file:   CMSIS\RTOS2\RTX\Template\main.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Timer.c
+      Include file:  CMSIS\RTOS2\RTX\Config\RTX_Config.h
+      Source file:   CMSIS\RTOS2\RTX\Template\Semaphore.c
+      Library file:  CMSIS\RTOS2\RTX\Library\ARM\RTX_CM4F.lib
+
+   * Component: Keil.NUCLEO-F429ZI::Board Support:LED:1.0.0
+      Source file:   Boards\ST\NUCLEO-F429ZI\Common\LED_NUCLEO_F429ZI.c
+
+   * Component: Keil::CMSIS Driver:SPI:2.15
+      Source file:   CMSIS\Driver\SPI_STM32F4xx.c
+
+   * Component: Keil::Device:STM32Cube Framework:Classic:1.7.9
+      Source file:   MDK\Templates_LL\Src\main.c
+      Include file:  CMSIS\Driver\Config\RTE_Device.h
+      Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
+      Source file:   MDK\Templates\Src\stm32f4xx_it.c
+      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
+      Source file:   MDK\Templates\Src\main.c
+      Include file:  MDK\Templates\Inc\main.h
+      Include file:  MDK\Templates_LL\Inc\main.h
+      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
+
+   * Component: Keil::Device:STM32Cube HAL:Common:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
+      Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
+
+   * Component: Keil::Device:STM32Cube HAL:Cortex:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
+
+   * Component: Keil::Device:STM32Cube HAL:DMA:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:GPIO:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
+
+   * Component: Keil::Device:STM32Cube HAL:PWR:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:RCC:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:RTC:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc.c
+
+   * Component: Keil::Device:STM32Cube HAL:SPI:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c
+
+   * Component: Keil::Device:STM32Cube HAL:TIM:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
+
+   * Component: Keil::Device:Startup:2.6.3
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f429xx.s
+      Source file:   MDK\Device\Source\ARM\STM32F42xxx_43xxx_OPT.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>

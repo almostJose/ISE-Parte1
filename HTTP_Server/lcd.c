@@ -1,5 +1,5 @@
-#include "cmsis_os2.h"                          // CMSIS RTOS header file
-#include "stm32f4xx_hal.h"
+//#include "cmsis_os2.h"                          // CMSIS RTOS header file
+//#include "stm32f4xx_hal.h"
 #include "Driver_SPI.h"
 #include "stdio.h"
 #include "string.h"
@@ -9,11 +9,6 @@
 osThreadId_t tid_lcd;                        // thread id
 osMessageQueueId_t mid_MsgQueue;                // message queue id
 extern ARM_DRIVER_SPI Driver_SPI1; //driver del protocolo SPI
-
-typedef struct {                                // object data type
-  uint8_t linea;
-  unsigned char inf[256];
-} MSGQUEUE_OBJ_t;
 
 static GPIO_InitTypeDef GPIO_InitStruct; //tipo gpio para inicializar los pines
 static TIM_HandleTypeDef htim7; //timer 7
