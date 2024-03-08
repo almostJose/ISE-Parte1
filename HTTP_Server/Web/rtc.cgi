@@ -3,17 +3,9 @@ t <script language=JavaScript type="text/javascript" src="xml_http.js"></script>
 t <script language=JavaScript type="text/javascript">
 # Define URL and refresh timeout
 t var formUpdate = new periodicObj("rtc.cgx", 500);
-t function plotRTCGraph() {
-t  rtcVal = document.getElementById("rtc_value").value;
-t  numVal = parseInt(rtcVal, 16);
-t  voltsVal = (3.3*numVal)/4096;
-t  tableSize = (numVal*100/4096);
-t  document.getElementById("rtc_table").style.width = (tableSize + '%');
-t  document.getElementById("rtc_volts").value = (voltsVal.toFixed(3) + ' V');
-t }
 t function periodicUpdateRtc() {
 t  if(document.getElementById("rtcChkBox").checked == true) {
-t   updateMultiple(formUpdate,plotRTCGraph);
+t   updateMultiple(formUpdate);
 t   rtc_elTime = setTimeout(periodicUpdateRtc, formUpdate.period);
 t  }
 t  else
@@ -41,7 +33,7 @@ t <input type="text" readonly style="background-color: transparent; border: 0px"
 c h 2  size="10" id="date" value="%s"></td></tr>
 t </font></table>
 t <p align=center>
-t <input type=button value="Refresh" onclick="updateMultiple(formUpdate,plotRTCGraph)">
+t <input type=button value="Refresh" onclick="updateMultiple(formUpdate)">
 t Periodic:<input type="checkbox" id="rtcChkBox" onclick="periodicUpdateRtc()">
 t </p></form>
 i pg_footer.inc
