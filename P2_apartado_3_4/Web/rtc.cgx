@@ -1,0 +1,7 @@
+t <form>
+t <text>
+t <id>rtc_value</id>
+c z<value>0x%03X</value>
+t </text>
+t </form>
+.

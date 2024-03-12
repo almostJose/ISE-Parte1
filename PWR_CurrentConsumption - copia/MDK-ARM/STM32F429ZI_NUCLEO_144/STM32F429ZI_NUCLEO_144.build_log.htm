@@ -1,0 +1,384 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.34.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: José Perandrés UPM Flex license: MDK Professional 5.34 (Flex) (mdk_pro) Operation stops: 24 Jan 2027
+ 
+Tool Versions:
+Toolchain:       MDK Professional 5.34 (Flex)  Version: 5.34.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.34.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
+Dialog DLL:      TCM.DLL V1.48.0.0
+ 
+<h2>Project:</h2>
+C:\UNIVERSIDAD\ISE\ISE-Parte1\PWR_CurrentConsumption - copia\MDK-ARM\Prac3_apartado2.uvprojx
+Project File Date:  03/10/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'STM32F429ZI_NUCLEO_144'
+Note: source file '..\Src\system_stm32f4xx.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\system_stm32f4xx.o' to 'STM32F429ZI_NUCLEO_144\system_stm32f4xx_1.o'.
+Note: source file '../Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_nucleo_144.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_nucleo_144_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_adc.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_adc_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_adc_ex.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_adc_ex_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_cortex.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_cortex_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_dma.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_dma_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_dma_ex.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_dma_ex_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_gpio.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_gpio_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_pwr.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_pwr_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_pwr_ex.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_pwr_ex_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_rcc.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_rcc_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_rcc_ex.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_rcc_ex_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_rtc.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_rtc_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_rtc_ex.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_rtc_ex_1.o'.
+Note: source file 'C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_spi.o' to 'STM32F429ZI_NUCLEO_144\stm32f4xx_hal_spi_1.o'.
+Note: source file 'RTE\Device\STM32F429ZITx\startup_stm32f429xx.s' - object file renamed from 'STM32F429ZI_NUCLEO_144\startup_stm32f429xx.o' to 'STM32F429ZI_NUCLEO_144\startup_stm32f429xx_1.o'.
+Note: source file 'RTE\Device\STM32F429ZITx\system_stm32f4xx.c' - object file renamed from 'STM32F429ZI_NUCLEO_144\system_stm32f4xx.o' to 'STM32F429ZI_NUCLEO_144\system_stm32f4xx_2.o'.
+compiling stm32f4xx_hal_cortex.c...
+compiling stm32f4xx_hal_rcc_ex.c...
+compiling stm32f4xx_hal_pwr.c...
+compiling system_stm32f4xx.c...
+compiling stm32f4xx_hal_dma.c...
+compiling stm32f4xx_hal.c...
+compiling stm32f4xx_hal_flash_ex.c...
+compiling stm32f4xx_hal_eth.c...
+compiling stm32f4xx_hal_rtc_ex.c...
+compiling stm32f4xx_hal_adc_ex.c...
+compiling stm32f4xx_hal_adc.c...
+compiling stm32f4xx_hal_spi.c...
+compiling stm32f4xx_hal_gpio.c...
+compiling stm32f4xx_hal_rcc.c...
+compiling stm32f4xx_hal_msp.c...
+compiling main.c...
+compiling stm32f4xx_it.c...
+compiling stm32f4xx_hal_pwr_ex.c...
+compiling stm32f4xx_hal_flash.c...
+compiling stm32f4xx_hal_dma_ex.c...
+compiling stm32f4xx_lp_modes.c...
+compiling HTTP_Server.c...
+..\Src\HTTP_Server.c(195): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+  		sprintf(msg.inf, aShowTime);
+..\Src\HTTP_Server.c(195): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *restrict"
+  		sprintf(msg.inf, aShowTime);
+..\Src\HTTP_Server.c(199): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+  		sprintf(msg.inf, aShowDate);
+..\Src\HTTP_Server.c(199): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *restrict"
+  		sprintf(msg.inf, aShowDate);
+..\Src\HTTP_Server.c(206): warning:  #111-D: statement is unreachable
+    osThreadExit();
+..\Src\HTTP_Server.c(58): warning:  #177-D: function "BlinkLed"  was declared but never referenced
+  static void BlinkLed (void *arg);
+..\Src\HTTP_Server.c(59): warning:  #177-D: function "Display"  was declared but never referenced
+  static void Display  (void *arg);
+..\Src\HTTP_Server.c: 7 warnings, 0 errors
+compiling stm32f4xx_hal_rtc.c...
+compiling HTTP_Server_CGI.c...
+..\Src\HTTP_Server_CGI.c(179): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+  				sprintf(msg.inf, lcd_text[0]);
+..\Src\HTTP_Server_CGI.c(188): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+  				sprintf(msg.inf, lcd_text[1]);
+..\Src\HTTP_Server_CGI.c: 2 warnings, 0 errors
+compiling LED_NUCLEO_F429ZI.c...
+compiling stm32f4xx_nucleo_144.c...
+compiling system_stm32f4xx.c...
+compiling stm32f4xx_nucleo_144.c...
+compiling lcd.c...
+..\Src\Arial12x12.h(102): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Src\lcd.c: 1 warning, 0 errors
+compiling RTC.c...
+compiling pot.c...
+..\Src\pot.c(275): warning:  #940-D: missing return statement at end of non-void function "configAD" 
+  }
+..\Src\pot.c: 1 warning, 0 errors
+compiling SPI_STM32F4xx.c...
+compiling stm32f4xx_hal_adc.c...
+compiling stm32f4xx_hal.c...
+compiling EMAC_STM32F4xx.c...
+compiling stm32f4xx_hal_adc_ex.c...
+compiling stm32f4xx_hal_cortex.c...
+compiling stm32f4xx_hal_pwr_ex.c...
+compiling stm32f4xx_hal_rcc_ex.c...
+compiling stm32f4xx_hal_rcc.c...
+compiling stm32f4xx_hal_gpio.c...
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c(126): warning:  #47-D: incompatible redefinition of macro "GPIO_MODE"  (declared at line 255 of "../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h")
+  #define GPIO_MODE             0x00000003U
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c(127): warning:  #47-D: incompatible redefinition of macro "EXTI_MODE"  (declared at line 265 of "../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h")
+  #define EXTI_MODE             0x10000000U
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c: 2 warnings, 0 errors
+compiling stm32f4xx_hal_rtc_ex.c...
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c(940): error:  #147: declaration is incompatible with "HAL_StatusTypeDef HAL_RTCEx_DeactivateWakeUpTimer(RTC_HandleTypeDef *)"  (declared at line 885 of "../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h")
+  uint32_t HAL_RTCEx_DeactivateWakeUpTimer(RTC_HandleTypeDef *hrtc)
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c: 0 warnings, 1 error
+compiling stm32f4xx_hal_dma.c...
+compiling stm32f4xx_hal_pwr.c...
+compiling stm32f4xx_hal_sram.c...
+compiling stm32f4xx_hal_dma_ex.c...
+compiling stm32f4xx_hal_rtc.c...
+compiling stm32f4xx_hal_spi.c...
+compiling stm32f4xx_hal_tim_ex.c...
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c(736): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC1]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c(755): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC2]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c(774): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC3]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c(1143): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC1]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c(1162): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC2]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c(1181): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC3]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c: 0 warnings, 6 errors
+compiling stm32f4xx_hal_tim.c...
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c(963): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC1]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c(983): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC2]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c(1003): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC3]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c(1022): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC4]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c(1538): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC1]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c(1558): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC2]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c(1577): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC3]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c(1596): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC4]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c(3862): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC1]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c(3879): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC2]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c(3896): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC3]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c(3913): error:  #20: identifier "TIM_DMADelayPulseCplt" is undefined
+        htim->hdma[TIM_DMA_ID_CC4]->XferCpltCallback = TIM_DMADelayPulseCplt;
+C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c: 0 warnings, 12 errors
+compiling stm32f4xx_ll_fmc.c...
+compiling system_stm32f4xx.c...
+"STM32F429ZI_NUCLEO_144\STM32F429ZI_NUCLEO_144.axf" - 19 Error(s), 13 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: Ethernet MAC Version: 2.2.0
+   * Component: Ethernet PHY Version: 2.2.0
+   * Component: SPI Version: 2.3.0
+   * Component: RTOS2 Version: 2.1.3
+   * Component: CORE Version: 5.5.0
+   * Component: Keil RTX5 Variant: Library Version: 5.5.3
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS-Driver.2.6.1.pack
+                ARM.CMSIS-Driver.2.6.1
+                CMSIS Drivers for external devices
+   * Component: LAN8742A Version: 1.3.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.MDK-Middleware.7.13.0.pack
+                Keil.MDK-Middleware.7.13.0
+                Middleware for Keil MDK-Professional and MDK-Plus
+   * Component: LED Version: 1.0.0
+   * Component: CORE Variant: IPv4 Release Version: 7.15.0
+   * Component: ETH Version: 7.15.0
+   * Component: SNTP Client Version: 7.15.0
+   * Component: Web Server Compact Variant: HTTP Version: 7.15.0
+   * Component: TCP Version: 7.15.0
+   * Component: UDP Version: 7.15.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.15.0.pack
+                Keil.STM32F4xx_DFP.2.15.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: STM32Cube Framework Version: 1.0.0
+   * Component: Ethernet MAC Version: 2.9
+   * Component: SPI Version: 2.15
+   * Component: Classic Version: 1.7.9
+   * Component: ADC Version: 1.7.9
+   * Component: Common Version: 1.7.9
+   * Component: Cortex Version: 1.7.9
+   * Component: DMA Version: 1.7.9
+   * Component: GPIO Version: 1.7.9
+   * Component: PWR Version: 1.7.9
+   * Component: RCC Version: 1.7.9
+   * Component: RTC Version: 1.7.9
+   * Component: SPI Version: 1.7.9
+   * Component: SRAM Version: 1.7.9
+   * Component: TIM Version: 1.7.9
+   * Component: Startup Version: 2.6.3
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32NUCLEO_BSP.1.8.0.pack
+                Keil.STM32NUCLEO_BSP.1.8.0
+                STMicroelectronics Nucleo Boards Support and Examples
+   * Component: LED Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\CMSIS
+  .\RTE\Device\STM32F429ZITx
+  .\RTE\Network
+  .\RTE\_STM32F429ZI_NUCLEO_144
+  C:\Users\jpera\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\jpera\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Driver\Include
+  C:\Users\jpera\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include
+  C:\Users\jpera\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\RTX\Include
+  C:\Users\jpera\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.13.0\Board
+  C:\Users\jpera\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.13.0\Network\Include
+  C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  C:\Users\jpera\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::Board Support:LED:1.0.0 (API)
+      Include file:  Board\Board_LED.h
+
+   * Component: ::CMSIS Driver:Ethernet MAC:2.2.0 (API)
+      Include file:  CMSIS\Driver\Include\Driver_ETH_MAC.h
+
+   * Component: ::CMSIS Driver:Ethernet PHY:2.2.0 (API)
+      Include file:  CMSIS\Driver\Include\Driver_ETH_PHY.h
+
+   * Component: ::CMSIS Driver:SPI:2.3.0 (API)
+      Include file:  CMSIS\Driver\Include\Driver_SPI.h
+
+   * Component: ::CMSIS:RTOS2:2.1.3 (API)
+      Include file:  CMSIS\RTOS2\Include\cmsis_os2.h
+
+   * Component: ::Device:STM32Cube Framework:1.0.0 (API)
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: ARM::CMSIS:RTOS2:Keil RTX5:Library:5.5.3
+      Source file:   CMSIS\RTOS2\RTX\Template\Timer.c
+      Include file:  CMSIS\RTOS2\RTX\Config\RTX_Config.h
+      Source file:   CMSIS\RTOS2\RTX\Template\MsgQueue.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Semaphore.c
+      Source file:   CMSIS\RTOS2\RTX\Template\MemPool.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Thread.c
+      Source file:   CMSIS\RTOS2\RTX\Source\rtx_lib.c
+      Source file:   CMSIS\RTOS2\RTX\Template\main.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Events.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Mutex.c
+      Library file:  CMSIS\RTOS2\RTX\Library\ARM\RTX_CM4F.lib
+      Source file:   CMSIS\RTOS2\RTX\Template\svc_user.c
+      Source file:   CMSIS\RTOS2\RTX\Config\RTX_Config.c
+      Include file:  CMSIS\RTOS2\RTX\Include\rtx_os.h
+
+   * Component: Keil.MDK-Plus::Network:CORE:IPv4 Release:7.15.0
+      Include file:  Network\Include\rl_net.h
+      Library file:  Network\Lib\ARM\Net4_CM3_L.lib
+      Source file:   Network\Config\Net_Config.c
+
+   * Component: Keil.MDK-Plus::Network:Interface:ETH:7.15.0
+      Include file:  Network\Config\Net_Config_ETH.h
+
+   * Component: Keil.MDK-Plus::Network:Service:SNTP Client:7.15.0
+      Include file:  Network\Config\Net_Config_SNTP_Client.h
+
+   * Component: Keil.MDK-Plus::Network:Service:Web Server Compact:HTTP:7.15.0
+      Source file:   Network\Template\HTTP_Server_CGI.c
+      Source file:   Network\Template\HTTP_Server_Access.c
+      Source file:   Network\Template\HTTP_Server_Multiuser.c
+      Source file:   Network\Template\HTTP_Server_Error.c
+      Include file:  Network\Config\Net_Config_HTTP_Server.h
+
+   * Component: Keil.MDK-Plus::Network:Socket:TCP:7.15.0
+      Source file:   Network\Template\TCP_Socket_Client.c
+      Include file:  Network\Config\Net_Config_TCP.h
+      Source file:   Network\Template\TCP_Socket_Server.c
+
+   * Component: Keil.MDK-Plus::Network:Socket:UDP:7.15.0
+      Include file:  Network\Config\Net_Config_UDP.h
+      Source file:   Network\Template\UDP_Socket.c
+
+   * Component: Keil.NUCLEO-F429ZI::Board Support:LED:1.0.0
+      Source file:   Boards\ST\NUCLEO-F429ZI\Common\LED_NUCLEO_F429ZI.c
+
+   * Component: Keil::CMSIS Driver:Ethernet MAC:2.9
+      Source file:   CMSIS\Driver\EMAC_STM32F4xx.c
+
+   * Component: Keil::CMSIS Driver:Ethernet PHY:LAN8742A:1.3.0
+      Source file:   ETH\PHY_LAN8742A.c
+
+   * Component: Keil::CMSIS Driver:SPI:2.15
+      Source file:   CMSIS\Driver\SPI_STM32F4xx.c
+
+   * Component: Keil::Device:STM32Cube Framework:Classic:1.7.9
+      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
+      Include file:  CMSIS\Driver\Config\RTE_Device.h
+      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
+      Source file:   MDK\Templates\Src\stm32f4xx_it.c
+      Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
+      Source file:   MDK\Templates\Src\main.c
+      Include file:  MDK\Templates_LL\Inc\main.h
+      Source file:   MDK\Templates_LL\Src\main.c
+      Include file:  MDK\Templates\Inc\main.h
+
+   * Component: Keil::Device:STM32Cube HAL:ADC:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c
+
+   * Component: Keil::Device:STM32Cube HAL:Common:1.7.9
+      Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
+
+   * Component: Keil::Device:STM32Cube HAL:Cortex:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
+
+   * Component: Keil::Device:STM32Cube HAL:DMA:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:GPIO:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
+
+   * Component: Keil::Device:STM32Cube HAL:PWR:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:RCC:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
+
+   * Component: Keil::Device:STM32Cube HAL:RTC:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:SPI:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c
+
+   * Component: Keil::Device:STM32Cube HAL:SRAM:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_fmc.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_sram.c
+
+   * Component: Keil::Device:STM32Cube HAL:TIM:1.7.9
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
+
+   * Component: Keil::Device:Startup:2.6.3
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Source file:   MDK\Device\Source\ARM\STM32F42xxx_43xxx_OPT.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f429xx.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Target not created.
+Build Time Elapsed:  00:00:19
+</pre>
+</body>
+</html>
